@@ -16,6 +16,7 @@ import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Comparator;
+import java.util.List;
 
 public record PlayerHandler(Player player) {
 
@@ -78,13 +79,21 @@ public record PlayerHandler(Player player) {
                     }
                     String typeIdentifier = ammoType.getIdentifier();
                     int currentAmmo = ammoPouch.getAmmo();
-                    @Nullable AmmoBox ammoBox = WMConfigurationManager.getConfiguration().getAmmoBoxes()
+                    List<AmmoBox> availableBoxes = WMConfigurationManager.getConfiguration().getAmmoBoxes()
                             .stream()
                             .filter(box -> box.getAmmoType().equals(typeIdentifier))
+                            .toList();
+                    @Nullable AmmoBox ammoBox = availableBoxes.stream()
                             .filter(box -> box.getAmount() <= currentAmmo)
                             .max(Comparator.comparingInt(AmmoBox::getAmount))
-                            .orElse(null);
+                            .orElseGet(() -> availableBoxes.stream()
+                                    .min(Comparator.comparingInt(AmmoBox::getAmount))
+                                    .orElse(null));
                     if (ammoBox == null){
+                        ItemStackModder
+                                .mod(itemStack)
+                                .replace("%total%", String.valueOf(currentAmmo))
+                                .replace("%ammoBoxAmount%", String.valueOf(ammoBox.getAmount()));
                         return itemStack;
                     }
                     ItemStackModder
