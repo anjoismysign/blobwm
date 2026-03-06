@@ -1,3 +1,4 @@
 tinyDebug: false
 ammoBoxes: []
 ammoTypes: []
+defaultPlayerData: {}

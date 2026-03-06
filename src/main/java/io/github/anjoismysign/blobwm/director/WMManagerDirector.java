@@ -2,7 +2,7 @@ package io.github.anjoismysign.blobwm.director;
 
 import io.github.anjoismysign.bloblib.entities.GenericManagerDirector;
 import io.github.anjoismysign.blobwm.BlobWM;
-import io.github.anjoismysign.blobwm.director.manager.ConfigurationManager;
+import io.github.anjoismysign.blobwm.director.manager.WMConfigurationManager;
 import io.github.anjoismysign.blobwm.director.manager.WMListenerManager;
 import org.jetbrains.annotations.NotNull;
 
@@ -10,7 +10,7 @@ public class WMManagerDirector extends GenericManagerDirector<BlobWM> {
     public WMManagerDirector(BlobWM plugin) {
         super(plugin);
         addManager("ConfigurationManager",
-                new ConfigurationManager(this));
+                new WMConfigurationManager(this));
         addManager("ListenerManager",
                 new WMListenerManager(this));
     }
@@ -29,8 +29,8 @@ public class WMManagerDirector extends GenericManagerDirector<BlobWM> {
     }
 
     @NotNull
-    public final ConfigurationManager getConfigurationManager() {
-        return getManager("ConfigurationManager", ConfigurationManager.class);
+    public final WMConfigurationManager getConfigurationManager() {
+        return getManager("ConfigurationManager", WMConfigurationManager.class);
     }
 
     @NotNull

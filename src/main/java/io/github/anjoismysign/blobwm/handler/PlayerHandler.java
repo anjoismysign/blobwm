@@ -6,7 +6,7 @@ import io.github.anjoismysign.bloblib.entities.translatable.TranslatableItem;
 import io.github.anjoismysign.bloblib.middleman.itemstack.ItemStackBuilder;
 import io.github.anjoismysign.bloblib.utilities.PlayerUtil;
 import io.github.anjoismysign.blobwm.BlobWM;
-import io.github.anjoismysign.blobwm.director.manager.ConfigurationManager;
+import io.github.anjoismysign.blobwm.director.manager.WMConfigurationManager;
 import io.github.anjoismysign.blobwm.entity.AmmoBox;
 import io.github.anjoismysign.blobwm.entity.AmmoPouch;
 import org.bukkit.Material;
@@ -25,7 +25,7 @@ public record PlayerHandler(Player player) {
                 "White-Background",
                 "AmmoBox",
                 ()->{
-                    return ConfigurationManager.getConfiguration().getAmmoTypes().stream().toList();
+                    return WMConfigurationManager.getConfiguration().getAmmoTypes().stream().toList();
                 },
                 ammoType -> {
                     BlobWM plugin = BlobWM.getInstance();
@@ -39,7 +39,7 @@ public record PlayerHandler(Player player) {
                     }
                     String typeIdentifier = ammoType.getIdentifier();
                     int currentAmmo = ammoPouch.getAmmo();
-                    @Nullable AmmoBox ammoBox = ConfigurationManager.getConfiguration().getAmmoBoxes()
+                    @Nullable AmmoBox ammoBox = WMConfigurationManager.getConfiguration().getAmmoBoxes()
                             .stream()
                             .filter(box -> box.getAmmoType().equals(typeIdentifier))
                             .filter(box -> box.getAmount() <= currentAmmo)

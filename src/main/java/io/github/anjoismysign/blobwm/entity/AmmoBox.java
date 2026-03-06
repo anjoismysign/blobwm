@@ -1,6 +1,6 @@
 package io.github.anjoismysign.blobwm.entity;
 
-import io.github.anjoismysign.blobwm.director.manager.ConfigurationManager;
+import io.github.anjoismysign.blobwm.director.manager.WMConfigurationManager;
 import org.jetbrains.annotations.Nullable;
 
 public class AmmoBox {
@@ -34,7 +34,7 @@ public class AmmoBox {
 
     @Nullable
     public AmmoType toAmmoType(){
-        return ConfigurationManager.getConfiguration().getAmmoTypes()
+        return WMConfigurationManager.getConfiguration().getAmmoTypes()
                 .stream()
                 .filter(type->type.getIdentifier().equals(ammoType))
                 .findFirst()

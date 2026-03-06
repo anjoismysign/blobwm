@@ -2,6 +2,8 @@ package io.github.anjoismysign.blobwm.entity;
 
 import io.github.anjoismysign.bloblib.entities.PlayerDecorator;
 import io.github.anjoismysign.bloblib.entities.PlayerDecoratorAware;
+import io.github.anjoismysign.blobwm.configuration.DefaultPlayerData;
+import io.github.anjoismysign.blobwm.director.manager.WMConfigurationManager;
 import io.github.anjoismysign.psa.PostLoadable;
 import io.github.anjoismysign.psa.crud.Crudable;
 import org.bukkit.entity.Player;
@@ -14,13 +16,15 @@ import java.util.Map;
 public final class WMProfile implements Crudable, PlayerDecoratorAware, PostLoadable {
 
     private final String identification;
-    private Map<String, Integer> ammoPouch;
+    private final Map<String, Integer> ammoPouch;
 
     private transient @Nullable PlayerDecorator playerDecorator;
 
     public WMProfile(String identification) {
         this.identification = identification;
         this.ammoPouch = new HashMap<>();
+        DefaultPlayerData defaults = WMConfigurationManager.getConfiguration().getDefaultPlayerData();
+        defaults.getAmmoPouch().forEach(this.ammoPouch::putIfAbsent);
         onPostLoad();
     }
 

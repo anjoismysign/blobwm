@@ -3,7 +3,7 @@ package io.github.anjoismysign.blobwm.listener;
 import io.github.anjoismysign.bloblib.entities.message.BlobSound;
 import io.github.anjoismysign.bloblib.entities.translatable.TranslatableItem;
 import io.github.anjoismysign.blobwm.BlobWM;
-import io.github.anjoismysign.blobwm.director.manager.ConfigurationManager;
+import io.github.anjoismysign.blobwm.director.manager.WMConfigurationManager;
 import io.github.anjoismysign.blobwm.director.manager.WMListenerManager;
 import io.github.anjoismysign.blobwm.entity.AmmoBox;
 import org.bukkit.entity.Player;
@@ -35,7 +35,7 @@ public class AmmoBoxListener extends WMListener {
             return;
         }
         String identifier = translatableItem.identifier();
-        @Nullable AmmoBox ammoBox = ConfigurationManager.getConfiguration().getAmmoBoxes()
+        @Nullable AmmoBox ammoBox = WMConfigurationManager.getConfiguration().getAmmoBoxes()
                 .stream()
                 .filter(box->box.getIdentifier().equals(identifier))
                 .findFirst()

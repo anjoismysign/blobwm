@@ -4,7 +4,7 @@ import io.github.anjoismysign.bloblib.api.BlobLibMessageAPI;
 import io.github.anjoismysign.bloblib.managers.BlobPlugin;
 import io.github.anjoismysign.bloblib.managers.cruder.AccountCruder;
 import io.github.anjoismysign.blobwm.director.WMManagerDirector;
-import io.github.anjoismysign.blobwm.director.manager.ConfigurationManager;
+import io.github.anjoismysign.blobwm.director.manager.WMConfigurationManager;
 import io.github.anjoismysign.blobwm.entity.AmmoBox;
 import io.github.anjoismysign.blobwm.entity.AmmoPouch;
 import io.github.anjoismysign.blobwm.entity.AmmoType;
@@ -108,6 +108,6 @@ public final class BlobWM extends BlobPlugin implements BlobWMAPI {
 
     @Nullable
     public AmmoType getAmmoType(String weaponTitle) {
-        return ConfigurationManager.getConfiguration().getAmmoType(weaponTitle);
+        return WMConfigurationManager.getConfiguration().getAmmoType(weaponTitle);
     }
 }

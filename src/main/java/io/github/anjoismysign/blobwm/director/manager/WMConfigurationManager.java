@@ -13,10 +13,10 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
-public class ConfigurationManager extends WMManager {
+public class WMConfigurationManager extends WMManager {
     private static WMConfiguration configuration;
 
-    public ConfigurationManager(WMManagerDirector managerDirector) {
+    public WMConfigurationManager(WMManagerDirector managerDirector) {
         super(managerDirector);
         reload();
     }

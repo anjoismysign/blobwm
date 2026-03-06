@@ -10,6 +10,7 @@ public class WMConfiguration {
     private boolean tinyDebug;
     private Set<AmmoType> ammoTypes;
     private Set<AmmoBox> ammoBoxes;
+    private DefaultPlayerData defaultPlayerData;
 
     WMConfiguration(){}
 
@@ -35,6 +36,14 @@ public class WMConfiguration {
 
     public void setAmmoBoxes(Set<AmmoBox> ammoBoxes) {
         this.ammoBoxes = ammoBoxes;
+    }
+
+    public DefaultPlayerData getDefaultPlayerData() {
+        return defaultPlayerData;
+    }
+
+    public void setDefaultPlayerData(DefaultPlayerData defaultPlayerData) {
+        this.defaultPlayerData = defaultPlayerData;
     }
 
     @Nullable
