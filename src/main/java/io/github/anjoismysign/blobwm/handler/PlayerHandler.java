@@ -93,7 +93,7 @@ public record PlayerHandler(Player player) {
                         ItemStackModder
                                 .mod(itemStack)
                                 .replace("%total%", String.valueOf(currentAmmo))
-                                .replace("%ammoBoxAmount%", String.valueOf(ammoBox.getAmount()));
+                                .replace("%ammoBoxAmount%", "0");
                         return itemStack;
                     }
                     ItemStackModder
