@@ -76,9 +76,21 @@ public record PlayerHandler(Player player) {
                     if (ammoPouch == null) {
                         return itemStack;
                     }
+                    String typeIdentifier = ammoType.getIdentifier();
+                    int currentAmmo = ammoPouch.getAmmo();
+                    @Nullable AmmoBox ammoBox = WMConfigurationManager.getConfiguration().getAmmoBoxes()
+                            .stream()
+                            .filter(box -> box.getAmmoType().equals(typeIdentifier))
+                            .filter(box -> box.getAmount() <= currentAmmo)
+                            .max(Comparator.comparingInt(AmmoBox::getAmount))
+                            .orElse(null);
+                    if (ammoBox == null){
+                        return itemStack;
+                    }
                     ItemStackModder
                             .mod(itemStack)
-                            .replace("%total%", String.valueOf(ammoPouch.getAmmo()));
+                            .replace("%total%", String.valueOf(currentAmmo))
+                            .replace("%ammoBoxAmount%", String.valueOf(ammoBox.getAmount()));
                     return itemStack;
                 },
                 null,
