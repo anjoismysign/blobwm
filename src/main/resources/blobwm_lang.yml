@@ -1,0 +1,13 @@
+BlobWM:
+  Weapon-Info-Display:
+    Type: ACTIONBAR
+    Message: '%name% &8<<&f%ammo%&8/&7%pouch%&8>>'
+  Insufficient-Ammo:
+    Type: TITLE
+    Title: '&c&lNOT ENOUGH!'
+    Subtitle: '&cNot enough ammo'
+    BlobSound: System.Alert
+  Player-Not-Cached:
+    Type: CHAT
+    Message: '&7Your profile is still loading. Please wait...'
+    BlobSound: System.Alert

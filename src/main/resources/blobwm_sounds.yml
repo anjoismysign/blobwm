@@ -1,0 +1,6 @@
+BlobWM:
+  AmmoBox-Use:
+    Sound: item.armor.equip_chain
+    Volume: 1.0
+    Pitch: 1.0
+    Audience: WORLD

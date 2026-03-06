@@ -1,0 +1,13 @@
+name: BlobWM
+version: ${project.version}
+main: io.github.anjoismysign.blobwm.BlobWM
+api-version: 1.21.11
+load: POSTWORLD
+depend:
+  - BlobLib
+  - WeaponMechanics
+  - MechanicsCore
+authors: [ anjoismysign ]
+commands:
+  blobwm:
+    description: blobwm
