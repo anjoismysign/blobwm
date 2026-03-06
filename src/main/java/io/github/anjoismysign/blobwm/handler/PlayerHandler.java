@@ -4,6 +4,7 @@ import io.github.anjoismysign.bloblib.api.BlobLibInventoryAPI;
 import io.github.anjoismysign.bloblib.api.BlobLibMessageAPI;
 import io.github.anjoismysign.bloblib.entities.translatable.TranslatableItem;
 import io.github.anjoismysign.bloblib.middleman.itemstack.ItemStackBuilder;
+import io.github.anjoismysign.bloblib.middleman.itemstack.ItemStackModder;
 import io.github.anjoismysign.bloblib.utilities.PlayerUtil;
 import io.github.anjoismysign.blobwm.BlobWM;
 import io.github.anjoismysign.blobwm.director.manager.WMConfigurationManager;
@@ -67,9 +68,18 @@ public record PlayerHandler(Player player) {
                 ammoType -> {
                     String identifier = ammoType.getIdentifier();
                     @Nullable TranslatableItem translatableItem = TranslatableItem.by(identifier);
-                    return translatableItem == null ?
+                    ItemStack itemStack = translatableItem == null ?
                             ItemStackBuilder.build(Material.CHEST).itemName("&6"+ammoType.getIdentifier()).lore("&7Missing AmmoType's TranslatableItem").build() :
                             translatableItem.localize(player).getClone();
+                    BlobWM plugin = BlobWM.getInstance();
+                    @Nullable AmmoPouch ammoPouch = plugin.getAmmoPouch(player, ammoType);
+                    if (ammoPouch == null) {
+                        return itemStack;
+                    }
+                    ItemStackModder
+                            .mod(itemStack)
+                            .replace("%total%", String.valueOf(ammoPouch.getAmmo()));
+                    return itemStack;
                 },
                 null,
                 null,
