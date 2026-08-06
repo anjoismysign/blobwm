@@ -2,10 +2,10 @@ package io.github.anjoismysign.blobwm.handler;
 
 import io.github.anjoismysign.bloblib.api.BlobLibInventoryAPI;
 import io.github.anjoismysign.bloblib.api.BlobLibMessageAPI;
-import io.github.anjoismysign.bloblib.entities.translatable.TranslatableItem;
 import io.github.anjoismysign.bloblib.middleman.itemstack.ItemStackBuilder;
 import io.github.anjoismysign.bloblib.middleman.itemstack.ItemStackModder;
-import io.github.anjoismysign.bloblib.utilities.PlayerUtil;
+import io.github.anjoismysign.bloblib.translatable.TranslatableItem;
+import io.github.anjoismysign.bloblib.utility.PlayerUtil;
 import io.github.anjoismysign.blobwm.BlobWM;
 import io.github.anjoismysign.blobwm.director.manager.WMConfigurationManager;
 import io.github.anjoismysign.blobwm.entity.AmmoBox;

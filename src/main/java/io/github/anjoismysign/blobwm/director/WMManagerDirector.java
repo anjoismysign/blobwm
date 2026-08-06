@@ -1,6 +1,6 @@
 package io.github.anjoismysign.blobwm.director;
 
-import io.github.anjoismysign.bloblib.entities.GenericManagerDirector;
+import io.github.anjoismysign.bloblib.manager.GenericManagerDirector;
 import io.github.anjoismysign.blobwm.BlobWM;
 import io.github.anjoismysign.blobwm.director.manager.WMConfigurationManager;
 import io.github.anjoismysign.blobwm.director.manager.WMListenerManager;

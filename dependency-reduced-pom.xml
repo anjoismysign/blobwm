@@ -4,7 +4,7 @@
   <groupId>io.github.anjoismysign</groupId>
   <artifactId>blobwm</artifactId>
   <name>BlobWM</name>
-  <version>1.0</version>
+  <version>1.1</version>
   <build>
     <resources>
       <resource>
@@ -73,7 +73,7 @@
     <dependency>
       <groupId>io.github.anjoismysign</groupId>
       <artifactId>bloblib</artifactId>
-      <version>1.698.32</version>
+      <version>1.700</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
@@ -94,6 +94,6 @@
   <properties>
     <minecraft.version>1.21.11</minecraft.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <java.version>17</java.version>
+    <java.version>25</java.version>
   </properties>
 </project>

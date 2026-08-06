@@ -1,7 +1,7 @@
 package io.github.anjoismysign.blobwm.listener;
 
-import io.github.anjoismysign.bloblib.entities.message.BlobSound;
-import io.github.anjoismysign.bloblib.entities.translatable.TranslatableItem;
+import io.github.anjoismysign.bloblib.message.BlobSound;
+import io.github.anjoismysign.bloblib.translatable.TranslatableItem;
 import io.github.anjoismysign.blobwm.BlobWM;
 import io.github.anjoismysign.blobwm.director.manager.WMConfigurationManager;
 import io.github.anjoismysign.blobwm.director.manager.WMListenerManager;
