@@ -1,6 +1,6 @@
 package io.github.anjoismysign.blobwm.director.manager;
 
-import io.github.anjoismysign.bloblib.entities.ListenerManager;
+import io.github.anjoismysign.bloblib.manager.ListenerManager;
 import io.github.anjoismysign.blobwm.director.WMManagerDirector;
 import io.github.anjoismysign.blobwm.listener.AmmoBoxListener;
 import io.github.anjoismysign.blobwm.listener.AmmoPouchListener;

@@ -1,8 +1,8 @@
 package io.github.anjoismysign.blobwm;
 
 import io.github.anjoismysign.bloblib.api.BlobLibMessageAPI;
-import io.github.anjoismysign.bloblib.managers.BlobPlugin;
-import io.github.anjoismysign.bloblib.managers.cruder.AccountCruder;
+import io.github.anjoismysign.bloblib.manager.BlobPlugin;
+import io.github.anjoismysign.bloblib.manager.cruder.AccountCruder;
 import io.github.anjoismysign.blobwm.director.WMManagerDirector;
 import io.github.anjoismysign.blobwm.director.manager.WMConfigurationManager;
 import io.github.anjoismysign.blobwm.entity.AmmoBox;

@@ -1,7 +1,7 @@
 package io.github.anjoismysign.blobwm.entity;
 
-import io.github.anjoismysign.bloblib.entities.PlayerDecorator;
-import io.github.anjoismysign.bloblib.entities.PlayerDecoratorAware;
+import io.github.anjoismysign.bloblib.domain.PlayerDecorator;
+import io.github.anjoismysign.bloblib.domain.PlayerDecoratorAware;
 import io.github.anjoismysign.blobwm.configuration.DefaultPlayerData;
 import io.github.anjoismysign.blobwm.director.manager.WMConfigurationManager;
 import io.github.anjoismysign.psa.PostLoadable;

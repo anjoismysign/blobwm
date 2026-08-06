@@ -1,8 +1,8 @@
 package io.github.anjoismysign.blobwm.listener;
 
 import io.github.anjoismysign.bloblib.api.BlobLibMessageAPI;
-import io.github.anjoismysign.bloblib.entities.translatable.TranslatableItem;
-import io.github.anjoismysign.bloblib.utilities.ItemStackUtil;
+import io.github.anjoismysign.bloblib.translatable.TranslatableItem;
+import io.github.anjoismysign.bloblib.utility.ItemStackUtil;
 import io.github.anjoismysign.bloblib.weaponmechanics.WeaponInfoDisplay;
 import io.github.anjoismysign.blobwm.BlobWM;
 import io.github.anjoismysign.blobwm.director.manager.WMListenerManager;
@@ -18,7 +18,6 @@ import org.bukkit.entity.EntityType;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
-import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.Nullable;
 
