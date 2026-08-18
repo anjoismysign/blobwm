@@ -91,6 +91,13 @@
       <systemPath>${project.basedir}/libs/MechanicsCore-4.2.3.jar</systemPath>
     </dependency>
   </dependencies>
+  <distributionManagement>
+    <repository>
+      <id>github</id>
+      <name>GitHub anjoismysign Apache Maven Packages</name>
+      <url>https://maven.pkg.github.com/anjoismysign/blobwm</url>
+    </repository>
+  </distributionManagement>
   <properties>
     <minecraft.version>1.21.11</minecraft.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
