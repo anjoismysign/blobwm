@@ -4,7 +4,7 @@
   <groupId>io.github.anjoismysign</groupId>
   <artifactId>blobwm</artifactId>
   <name>BlobWM</name>
-  <version>1.1</version>
+  <version>1.702.0</version>
   <build>
     <resources>
       <resource>
@@ -73,7 +73,7 @@
     <dependency>
       <groupId>io.github.anjoismysign</groupId>
       <artifactId>bloblib</artifactId>
-      <version>1.701</version>
+      <version>1.702</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
